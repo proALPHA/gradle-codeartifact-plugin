@@ -1,0 +1,31 @@
+plugins {
+    id 'com.gradle.plugin-publish' version "1.2.1"
+    id 'groovy'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    api group: 'software.amazon.awssdk', name: 'codeartifact', version: '2.24.0'
+    runtimeOnly  group: 'software.amazon.awssdk', name: 'sso', version: '2.24.0'
+    runtimeOnly  group: 'software.amazon.awssdk', name: 'ssooidc', version: '2.24.0'
+}
+
+group 'com.proalpha'
+version '1.0.0'
+
+gradlePlugin {
+    website = 'https://github.com/proALPHA/gradle-codeartifact-plugin/blob/main/README.md'
+    vcsUrl = 'https://github.com/proALPHA/gradle-codeartifact-plugin'
+    plugins {
+        codeartifact {
+            id = 'com.proalpha.codeartifact'
+            displayName = 'Gradle Codeartifact Plugin'
+            description = 'Gradle plugin to extend the gradle repository handler class with a closure to add a codeartifact repository.'
+            tags.set(['aws', 'codeartifact'])
+            implementationClass = 'com.proalpha.codeartifact.CodeartifactPlugin'
+        }
+    }
+}
