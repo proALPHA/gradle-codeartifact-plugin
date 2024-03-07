@@ -1,5 +1,5 @@
 plugins {
-    id 'com.gradle.plugin-publish' version "1.2.1"
+    id 'com.gradle.plugin-publish' version '1.2.1'
     id 'groovy'
 }
 
@@ -9,8 +9,9 @@ repositories {
 
 dependencies {
     api group: 'software.amazon.awssdk', name: 'codeartifact', version: '2.24.0'
-    runtimeOnly  group: 'software.amazon.awssdk', name: 'sso', version: '2.24.0'
-    runtimeOnly  group: 'software.amazon.awssdk', name: 'ssooidc', version: '2.24.0'
+    runtimeOnly group: 'software.amazon.awssdk', name: 'sso', version: '2.24.0'
+    runtimeOnly group: 'software.amazon.awssdk', name: 'ssooidc', version: '2.24.0'
+    runtimeOnly group: 'software.amazon.awssdk', name: 'sts', version: '2.24.0'
 }
 
 group 'com.proalpha'
