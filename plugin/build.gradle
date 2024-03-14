@@ -3,6 +3,9 @@ plugins {
     id 'groovy'
 }
 
+sourceCompatibility = '21'
+targetCompatibility = '8'
+
 repositories {
     mavenCentral()
 }
@@ -15,7 +18,7 @@ dependencies {
 }
 
 group 'com.proalpha'
-version '1.0.0'
+version '1.0.1'
 
 gradlePlugin {
     website = 'https://github.com/proALPHA/gradle-codeartifact-plugin/blob/main/README.md'
