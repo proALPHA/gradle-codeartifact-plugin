@@ -11,14 +11,14 @@ repositories {
 }
 
 dependencies {
-    api group: 'software.amazon.awssdk', name: 'codeartifact', version: '2.24.0'
-    runtimeOnly group: 'software.amazon.awssdk', name: 'sso', version: '2.24.0'
-    runtimeOnly group: 'software.amazon.awssdk', name: 'ssooidc', version: '2.24.0'
-    runtimeOnly group: 'software.amazon.awssdk', name: 'sts', version: '2.24.0'
+    api group: 'software.amazon.awssdk', name: 'codeartifact', version: '2.26.30'
+    runtimeOnly group: 'software.amazon.awssdk', name: 'sso', version: '2.26.30'
+    runtimeOnly group: 'software.amazon.awssdk', name: 'ssooidc', version: '2.26.30'
+    runtimeOnly group: 'software.amazon.awssdk', name: 'sts', version: '2.26.30'
 }
 
 group 'com.proalpha'
-version '1.0.1'
+version '1.0.2'
 
 gradlePlugin {
     website = 'https://github.com/proALPHA/gradle-codeartifact-plugin/blob/main/README.md'

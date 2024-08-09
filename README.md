@@ -11,7 +11,7 @@ You can add the plugin like this and add as many codeartifact repositories, as y
 
 ```groovy
 plugins {
-    id 'com.proalpha.codeartifact' version '1.0.0'
+    id 'com.proalpha.codeartifact' version '1.0.2'
 }
 
 repositories {
@@ -29,7 +29,7 @@ Or you add repositories to the publishing plugin:
 ```groovy
 plugins {
     id 'maven-publish'
-    id 'com.proalpha.codeartifact' version '1.0.0' // Note: Has to be added after maven-publish
+    id 'com.proalpha.codeartifact' version '1.0.2' // Note: Has to be added after maven-publish
 }
 
 publishing {
