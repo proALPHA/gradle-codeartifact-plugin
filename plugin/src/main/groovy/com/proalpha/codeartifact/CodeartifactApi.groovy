@@ -4,6 +4,7 @@ import software.amazon.awssdk.services.codeartifact.CodeartifactClient
 import software.amazon.awssdk.services.codeartifact.model.GetRepositoryEndpointRequest
 import software.amazon.awssdk.services.codeartifact.model.GetAuthorizationTokenRequest
 import software.amazon.awssdk.regions.Region
+import software.amazon.awssdk.core.exception.SdkClientException
 
 class CodeartifactApi {
 
@@ -22,23 +23,39 @@ class CodeartifactApi {
     }
 
     String repositoryUrl() {
-        return client.getRepositoryEndpoint(
-            GetRepositoryEndpointRequest.builder()
-                .domain(this.domain)
-                .domainOwner(this.domainOwner)
-                .format('maven')
-                .repository(this.repository)
-                .build()
-        ).repositoryEndpoint()
+        try {
+            return client.getRepositoryEndpoint(
+                GetRepositoryEndpointRequest.builder()
+                    .domain(this.domain)
+                    .domainOwner(this.domainOwner)
+                    .format('maven')
+                    .repository(this.repository)
+                    .build()
+            ).repositoryEndpoint()
+        } catch (SdkClientException e) {
+            if (e.message?.toLowerCase().contains("credentials")) {
+                throw new CodeartifactCredentialsException(e)
+            } else {
+                throw e
+            }
+        }
     }
 
     String authorizationToken() {
-        return client.getAuthorizationToken(
-            GetAuthorizationTokenRequest.builder()
-                .domain(this.domain)
-                .domainOwner(this.domainOwner)
-                .build()
-        ).authorizationToken()
+        try {
+            return client.getAuthorizationToken(
+                GetAuthorizationTokenRequest.builder()
+                    .domain(this.domain)
+                    .domainOwner(this.domainOwner)
+                    .build()
+            ).authorizationToken()
+        } catch (SdkClientException e) {
+            if (e.message?.toLowerCase().contains("credentials")) {
+                throw new CodeartifactCredentialsException(e)
+            } else {
+                throw e
+            }
+        }
     }
 
 }
