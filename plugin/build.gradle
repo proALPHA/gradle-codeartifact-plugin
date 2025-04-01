@@ -1,5 +1,5 @@
 plugins {
-    id 'com.gradle.plugin-publish' version '1.2.1'
+    id 'com.gradle.plugin-publish' version '1.3.1'
     id 'groovy'
 }
 
@@ -11,14 +11,14 @@ repositories {
 }
 
 dependencies {
-    api group: 'software.amazon.awssdk', name: 'codeartifact', version: '2.26.30'
-    runtimeOnly group: 'software.amazon.awssdk', name: 'sso', version: '2.26.30'
-    runtimeOnly group: 'software.amazon.awssdk', name: 'ssooidc', version: '2.26.30'
-    runtimeOnly group: 'software.amazon.awssdk', name: 'sts', version: '2.26.30'
+    api group: 'software.amazon.awssdk', name: 'codeartifact', version: '2.31.11'
+    runtimeOnly group: 'software.amazon.awssdk', name: 'sso', version: '2.31.11'
+    runtimeOnly group: 'software.amazon.awssdk', name: 'ssooidc', version: '2.31.11'
+    runtimeOnly group: 'software.amazon.awssdk', name: 'sts', version: '2.31.11'
 }
 
 group 'com.proalpha'
-version '1.0.2'
+version '1.1.0'
 
 gradlePlugin {
     website = 'https://github.com/proALPHA/gradle-codeartifact-plugin/blob/main/README.md'
